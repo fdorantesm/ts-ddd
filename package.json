@@ -1,0 +1,21 @@
+{
+  "name": "ts-ddd",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc -b -v packages"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "workspaces": [
+    "packages/*",
+    "@ts-ddd/value-object"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "lerna": "^8.1.7",
+    "@types/node": "22.0.0"
+  }
+}

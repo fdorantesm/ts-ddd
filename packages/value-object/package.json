@@ -1,0 +1,13 @@
+{
+  "name": "@ts-ddd/value-object",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "devDependencies": {},
+  "scripts": {
+    "build": "tsc"
+  },
+  "keywords": [],
+  "author": "Fernando Dorantes <fernando@dorant.es>",
+  "license": "MIT",
+  "description": ""
+}
