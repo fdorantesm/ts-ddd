@@ -64,6 +64,9 @@ jobs:
       - name: Build packages
         run: npm run build
 
+      - name: Configure npm for authentication
+        run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
+
       - name: Publish to npm
         run: npx lerna publish from-package --yes
         env:
