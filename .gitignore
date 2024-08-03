@@ -1,4 +1,5 @@
 node_modules/
 dist
+tsconfig.build.tsbuildinfo
 
 .DS_Store
