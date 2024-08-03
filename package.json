@@ -10,7 +10,9 @@
   "description": "",
   "workspaces": [
     "packages/*",
-    "@ts-ddd/value-object"
+    "@ts-ddd/common",
+    "@ts-ddd/value-object",
+    "@ts-ddd/entity"
   ],
   "dependencies": {},
   "devDependencies": {
