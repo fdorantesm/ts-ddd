@@ -8,16 +8,13 @@ on:
   push:
     branches:
       - main
-  pull_request:
-    branches:
-      - main
 
 jobs:
   install:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [22.x]
+        node-version: [20.x]
     steps:
       - uses: actions/checkout@v3
         with:
@@ -43,7 +40,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [22.x]
+        node-version: [20.x]
     steps:
       - uses: actions/checkout@v3
         with:
@@ -68,6 +65,7 @@ jobs:
         run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
 
       - name: Publish to npm
-        run: npx lerna publish from-package --yes
+        run: npx lerna publish from-package --yes --force-publish --loglevel verbose
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        timeout-minutes: 5
