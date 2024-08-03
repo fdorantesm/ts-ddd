@@ -48,7 +48,7 @@ export class Uuid extends StringValue {
 }
 ```
 
-## Available Icons
+## Value Objects
 
 See all available classes:
 
