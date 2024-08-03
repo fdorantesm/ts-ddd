@@ -1,5 +1,9 @@
 name: Publish to npm
 
+concurrency:
+  group: ${{ github.ref }}
+  cancel-in-progress: true
+
 on:
   push:
     branches:
@@ -9,28 +13,58 @@ on:
       - main
 
 jobs:
-  build-and-publish:
+  install:
     runs-on: ubuntu-latest
-
+    strategy:
+      matrix:
+        node-version: [22.x]
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
+      - uses: actions/checkout@v3
         with:
-          node-version: "22"
-          cache: "npm"
+          fetch-depth: 0
 
-      - name: Install dependencies
-        run: npm install
+      - uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
 
-      - name: Build package
+      - name: Cache node_modules
+        uses: actions/cache@v3
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: Install libraries
+        run: npm install --only=dev
+
+  publish:
+    needs: install
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [22.x]
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Cache node_modules
+        uses: actions/cache@v3
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: Build packages
         run: npm run build
 
       - name: Publish to npm
+        run: npx lerna publish from-package --yes
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: |
-          npm config set //registry.npmjs.org/:_authToken $NODE_AUTH_TOKEN
-          npm publish --access public
