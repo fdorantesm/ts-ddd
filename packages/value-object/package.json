@@ -2,6 +2,9 @@
   "name": "@ts-ddd/value-object",
   "version": "1.0.0",
   "main": "dist/index.js",
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "build": "tsc"
   },
@@ -9,5 +12,10 @@
   "author": "Fernando Dorantes <fernando@dorant.es>",
   "license": "MIT",
   "description": "",
-  "gitHead": "8ee130a102fbfb61c53942730094496964eb4337"
+  "gitHead": "8ee130a102fbfb61c53942730094496964eb4337",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fdorantesm/ts-ddd.git",
+    "directory": "packages/value-object"
+  }
 }
