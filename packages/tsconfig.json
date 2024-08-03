@@ -1,8 +1,13 @@
 {
-  "files": [],
   "references": [
     {
       "path": "./value-object/tsconfig.build.json"
+    },
+    {
+      "path": "./entity/tsconfig.build.json"
+    },
+    {
+      "path": "./common/tsconfig.build.json"
     }
   ]
 }
