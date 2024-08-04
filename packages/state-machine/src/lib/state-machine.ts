@@ -25,7 +25,7 @@ export class StateMachine<T> {
   }
 
   public setState(state: EnumKeys<T>): void {
-    if (!this.canTransition(state)) {
+    if (!this.canTransitionTo(state)) {
       throw new InvalidStateTransitionException(
         `Invalid state transition from ${this.currentState.toString()} to ${state.toString()}`
       );
@@ -34,7 +34,7 @@ export class StateMachine<T> {
     this.currentState = state;
   }
 
-  public canTransition(to: EnumKeys<T>): boolean {
+  public canTransitionTo(to: EnumKeys<T>): boolean {
     const validTransitions = this.transitions[this.currentState];
     return validTransitions ? validTransitions.includes(to) : false;
   }
