@@ -13,7 +13,7 @@
     "experimentalDecorators": true,
     "useUnknownInCatchVariables": false,
     "target": "ES6",
-    "sourceMap": true,
+    "sourceMap": false,
     "allowJs": false,
     "strict": true,
     "strictNullChecks": false,
