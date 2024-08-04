@@ -1,6 +1,6 @@
 {
   "name": "@ts-ddd/common",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "dist/index.js",
   "directories": {
     "lib": "lib"
@@ -18,5 +18,10 @@
   "description": "",
   "files": [
     "dist"
-  ]
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fdorantesm/ts-ddd.git",
+    "directory": "packages/common"
+  }
 }

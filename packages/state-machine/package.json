@@ -1,6 +1,6 @@
 {
   "name": "@ts-ddd/state-machine",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "main": "dist/index.js",
   "publishConfig": {
     "access": "public"
@@ -25,5 +25,10 @@
   "description": "A simple state machine for Typescript and JavaScript",
   "files": [
     "dist"
-  ]
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fdorantesm/ts-ddd.git",
+    "directory": "packages/common"
+  }
 }
