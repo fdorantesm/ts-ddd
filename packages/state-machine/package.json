@@ -1,0 +1,26 @@
+{
+  "name": "@ts-ddd/state-machine",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "build": "tsc"
+  },
+  "keywords": [
+    "state-machine",
+    "typescript",
+    "javascript",
+    "ddd",
+    "domain-driven-development",
+    "domain-driven-design",
+    "best-practices",
+    "clean-code",
+    "clean-architecture"
+  ],
+  "author": "Fernando Dorantes <fernando@dorant.es>",
+  "license": "MIT",
+  "description": "A simple state machine for Typescript and JavaScript"
+}
