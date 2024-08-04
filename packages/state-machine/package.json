@@ -1,6 +1,6 @@
 {
   "name": "@ts-ddd/state-machine",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "main": "dist/index.js",
   "publishConfig": {
     "access": "public"
@@ -22,5 +22,8 @@
   ],
   "author": "Fernando Dorantes <fernando@dorant.es>",
   "license": "MIT",
-  "description": "A simple state machine for Typescript and JavaScript"
+  "description": "A simple state machine for Typescript and JavaScript",
+  "files": [
+    "dist"
+  ]
 }
