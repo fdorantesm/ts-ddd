@@ -1,6 +1,6 @@
 {
   "name": "@ts-ddd/value-object",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "main": "dist/index.js",
   "publishConfig": {
     "access": "public"
