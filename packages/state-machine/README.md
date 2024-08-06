@@ -1,9 +1,9 @@
-<h1 align="center">Value Object Utilities</h1>
+<h1 align="center">State Machine Utility</h1>
 
 <div align="center">
 <br>
 
-<p><i>Value Objects of primitive types</i></p>
+<p><i>A minimal state machine class</i></p>
 
 </div>
 
